@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+    <style>
+    .openbtn {
+       font-size: 30px;
+       cursor: pointer;
+       position: fixed;
+       top: 20px;
+       left: 20px;
+       z-index: 1;
+    }
+
+    .overlay {
+       height: 100%;
+       width: 0;
+       position: fixed;
+       z-index: 2;
+       top: 0;
+       left: 0;
+       background-color: rgba(0,0,0,0.888);
+       overflow-x: hidden;
+       transition: 0.5s;
+    }
+
+    .overlay-content {
+       position: relative;
+       top: 25%;
+       width: 100%;
+       text-align: center;
+       margin-top: 30px;
+    }
+
+    .overlay-content a {
+       padding: 8px;
+       text-decoration: none;
+       font-size: 36px;
+       color: #823;
+       display: block;
+       transition: 0.3s;
+    }
+
+       .overlay-content a:hover, .overlay-content a:focus {
+        color: #f1f1f1;
+    }
+
+    .closebtn {
+        position: absolute;
+        top: 20px;
+        right: 45px;
+        font-size: 60px;
+        cursor: pointer;
+        color: #fff;
+    }
+     body {
+        font-family: 'Century Gothic';
+        margin: 0;
+        padding: 0;
+        background: #387;
+        color: #f0f0f0;
+        line-height: 1.6;
+    }
+
+
+    .card {
+        background: rgba(0, 0, 0, 0.7);
+        border: 1px solid #ff7e5f;
+        border-radius: 12px;
+        padding: 25px;
+        margin: 20px auto;
+        max-width: 300px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    header {
+        background: #111;
+        color: white;
+        padding: 20px 10px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        background: #111;
+        padding: 10px;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    nav li {
+        list-style: none;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 20px;
+        font-size: 18px;
+        padding: 8px 15px;
+        transition: background 0.3s, color 0.3s;
+        border-radius: 5px;
+    }
+
+    nav a:hover {
+        background: #444;
+        color: #ff7e5f;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background: #ff7e5f;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 25px;
+        transition: background 0.3s, transform 0.3s;
+    }
+
+    .btn:hover {
+        background: #feb47b;
+        transform: translateY(-3px);
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #100;
+        color: #fff;
+        font-size: 0.9rem;
+        box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+    }
+        #searchInput {
+            width: 80%;
+            padding: 10px;
+            margin: 10px auto;
+            border: 2px solid #444;
+            border-radius: 5px;
+            display: block;
+        }
+        #searchResults {
+            width: 10%;
+            padding: 10px;
+            margin: 10px auto;
+            border: 1px solid #ff7e5f;
+            border-radius: 5px;
+            display: block;
+            margin-top: 2px;
+        }
+        .result {
+            padding: 10px;
+            background-color: #f4f4f4;
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .result a {
+            text-decoration: none;
+            color: #444;
+        }
+        .result:hover {
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Explore Oceans</h1>
+        <p>Search for a Ocean and jump directly to its section</p>
+        <input type="text" id="searchInput" placeholder="Search Oceans names..." onkeyup="searchItems()">
+        <div id="searchResults"></div>
+    </header>
+    <div id="navOverlay" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+	<a href="#home">Home</a>
+	<a href="#about">Asia</a>
+	<a href="#products">Africa</a>
+	<a href="#location">North America</a>
+	<a href="#timings">South America</a>
+        <a href="file:///C:/Users/Yuval/Desktop/EXTRAS/New%20folder/website%20project/abcde%20-%20Copy.html">Europe</a>
+        <a href="#contact">Ocean</a>
+        <a href="#contact">Oceania</a>
+        <a href="#feedback">Antarctica</a>
+        </div>
+    </div>
+    <span class="openbtn" onclick="openNav()">&#9776; Menu</span>
+    <script src="scripts.js"></script>  
+
+
+    <section id="Atlantic">
+     <br><br>
+     <div class="card">     
+        <h2>Atlantic Ocean</h2>
+        <p>Special: The second-largest ocean, it separates the Americas from Europe and Africa. It is known for its significant shipping routes, the Bermuda Triangle, and the Gulf Stream.</p>
+ <a href="https://th.bing.com/th/id/R.385e51cb771f55700dd25490c2eef47e?rik=OUAupi%2bRnVyg6w&riu=http%3a%2f%2fontheworldmap.com%2foceans-and-seas%2fatlantic-ocean%2fatlantic-ocean-physical-map-max.jpg&ehk=3sk7MpLwPmMIk3Qh68y0pNZf8LQcmoJLcR2QsS3iQM8%3d&risl=&pid=ImgRaw&r=0" class="btn">View Map</a>
+    </div>
+    </section>
+
+
+    <section id="Indian">
+     <br><br>
+     <div class="card">       
+        <h2>Indian Ocean</h2>
+        <p>Special: The third-largest ocean, it is bordered by Asia, Africa, Australia, and the Indian subcontinent. It is important for trade routes and is known for its warm waters and monsoon winds.</p>
+ <a href="https://th.bing.com/th/id/OIP.H73ulYtwgMf0Uaz6FElKewHaHK?rs=1&pid=ImgDetMain" class="btn">View Map</a>
+    </div>
+    </section>
+
+
+     <section id="Arctic">
+     <br><br>
+     <div class="card">   
+        <h2>Arctic Ocean</h2>
+        <p>Special: The smallest and shallowest of the world's oceans, it is located around the Arctic region and is mostly covered by sea ice. It is critical for global climate and has unique marine life.</p>
+ <a href="https://th.bing.com/th/id/OIP.LU3qSuRAa8UvbDjbWe1SpQHaHn?rs=1&pid=ImgDetMain" class="btn">View Map</a>
+    </div>
+    </section>
+
+
+    <section id="Southern">
+     <br><br>
+     <div class="card">   
+        <h2>Southern Ocean</h2>
+        <p>Special: Also known as the Antarctic Ocean, it surrounds Antarctica and is recognized for its strong currents, such as the Antarctic Circumpolar Current, and for being the least explored ocean.</p>
+ <a href="https://cdn.britannica.com/93/126593-050-0916CA56/Southern-Ocean.jpg" class="btn">View Map</a>
+    </div>
+    </section>
+
+
+    <section id="Pacific">
+     <br><br>
+     <div class="card">  
+        <h2>Pacific Ocean</h2>
+        <p>Special: The largest and deepest ocean, it covers more than 30% of the Earth's surface. It is known for the Pacific Ring of Fire, tropical islands, and being home to the Great Barrier Reef.</p>
+ <a href="https://th.bing.com/th/id/OIP.36OuNjfFZL-nNWn4caBPtgHaFz?rs=1&pid=ImgDetMain" class="btn">View Map</a>
+    </div>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2024-25 YTechArt. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const items = [
+            { name: "Atlantic", id: "Atlantic" },
+            { name: "Indian", id: "Indian" },
+            { name: "Arctic", id: "Arctic" },
+            { name: "Southern", id: "Southern" },
+            { name: "Pacific", id: "Pacific" }
+        ];
+function openNav() {
+    document.getElementById("navOverlay").style.width = "500px";
+}
+
+function closeNav() {
+    document.getElementById("navOverlay").style.width = "0";
+}
+        function searchItems() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const filteredItems = items.filter(item => item.name.toLowerCase().includes(query));
+
+            displayResults(filteredItems);
+        }
+
+        function displayResults(results) {
+            const resultContainer = document.getElementById('searchResults');
+            resultContainer.innerHTML = ''; // Clear previous results
+
+            if (results.length === 0) {
+                resultContainer.innerHTML = '<p>No results found</p>';
+            } else {
+                results.forEach(result => {
+                    const div = document.createElement('div');
+                    div.classList.add('result');
+
+                    const link = document.createElement('a');
+                    link.href = `#${result.id}`; // Anchor link to the section ID
+                    link.textContent = result.name; // Link text
+
+                    div.appendChild(link);
+                    resultContainer.appendChild(div);
+                });
+            }
+        }
+    </script>
+
+</body>
+</html>
+ 
